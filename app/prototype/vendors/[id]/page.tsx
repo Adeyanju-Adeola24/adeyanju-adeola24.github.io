@@ -3,6 +3,10 @@ import { vendors, products } from "@/lib/data";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
+export function generateStaticParams() {
+  return [{ id: "1" }, { id: "2" }];
+}
+
 export default function VendorProfilePage() {
   const params = useParams()
   const vendor = vendors.find((v) => v.id === params.id)

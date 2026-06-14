@@ -4,6 +4,10 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 
+export function generateStaticParams() {
+  return [{ id: "1" }, { id: "2" }];
+}
+
 export default function ChatDetailPage() {
   const params = useParams()
   const thread = chatThreads.find((t) => t.id === params.id)
