@@ -1,7 +1,7 @@
 import ClientChatPage from "./client-page";
 
 export function generateStaticParams() {
-  return [{ id: "1" }, { id: "2" }];
+  return [{ id: "chat-1" }, { id: "chat-2" }, { id: "chat-3" }, { id: "chat-4" }];
 }
 
 export default function ChatDetailPage() {
