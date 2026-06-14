@@ -71,8 +71,8 @@ export default function ClientVendorProfile() {
             href={`/prototype/markets/${product.id}`}
             className="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/10 hover:bg-white/[0.07] transition-colors"
           >
-            <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-[#1a1a2e] to-[#16213e] flex items-center justify-center text-2xl shrink-0">
-              {product.images[0]}
+            <div className="w-16 h-16 rounded-lg bg-[#1a1a2e] overflow-hidden shrink-0">
+              <img src={product.images[0]} alt={product.title} className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium truncate">{product.title}</p>

@@ -42,8 +42,8 @@ export default function MarketsPage() {
             href={`/prototype/markets/${product.id}`}
             className="bg-white/5 rounded-xl border border-white/10 overflow-hidden hover:border-white/20 transition-all"
           >
-            <div className="h-32 bg-gradient-to-br from-[#1a1a2e] to-[#16213e] flex items-center justify-center text-4xl">
-              {product.images[0]}
+            <div className="h-32 bg-[#1a1a2e] overflow-hidden">
+              <img src={product.images[0]} alt={product.title} className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div className="p-3">
               <p className="text-[10px] text-gray-500 uppercase tracking-wider">{product.vendor.shop}</p>

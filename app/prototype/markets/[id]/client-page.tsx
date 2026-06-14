@@ -27,8 +27,8 @@ export default function ClientProductDetail() {
 
   return (
     <div className="pt-14 pb-20 max-w-lg mx-auto">
-      <div className="h-64 bg-gradient-to-br from-[#1a1a2e] to-[#16213e] flex items-center justify-center text-6xl">
-        {product.images[0]}
+      <div className="h-64 bg-[#1a1a2e] overflow-hidden">
+        <img src={product.images[0]} alt={product.title} className="w-full h-full object-cover" loading="lazy" />
       </div>
 
       <div className="px-4">
