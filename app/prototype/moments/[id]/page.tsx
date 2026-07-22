@@ -4,6 +4,10 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 
+export function generateStaticParams() {
+  return moments.map((m) => ({ id: m.id }));
+}
+
 export default function MomentDetailPage() {
   const params = useParams()
   const moment = moments.find((m) => m.id === params.id)

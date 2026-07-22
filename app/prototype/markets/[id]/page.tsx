@@ -4,6 +4,10 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 
+export function generateStaticParams() {
+  return products.map((p) => ({ id: p.id }));
+}
+
 const reviews = [
   { id: "r1", user: "Michael O.", avatar: "MO", rating: 5, text: "Exactly as described. Fast delivery too!", time: "2 days ago" },
   { id: "r2", user: "Sarah K.", avatar: "SK", rating: 5, text: "Great quality! Will buy again.", time: "1 week ago" },
