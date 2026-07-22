@@ -23,9 +23,7 @@ jobs:
           node-version: 22
       - uses: actions/configure-pages@v4
       - run: npm ci
-      - run: npm run build
-        env:
-          NEXT_TURBO: "0"
+      - run: npm run build -- --no-turbopack
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
