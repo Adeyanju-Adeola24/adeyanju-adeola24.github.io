@@ -24,9 +24,12 @@ jobs:
       - uses: actions/configure-pages@v4
       - run: npm ci
       - run: npm run build
+      - run: ls -la
+      - run: ls -la out/ 2>/dev/null || echo "No out/ directory"
+      - run: ls -la .next/ 2>/dev/null || echo "No .next/ directory"
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: out
 
   deploy:
     needs: build
