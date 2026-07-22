@@ -400,7 +400,7 @@ export default function Home() {
                 Interested in investing or receiving the pitch deck?
               </p>
               <a
-                href="/investor-deck"
+                href="/investor-deck.html"
                 className="inline-block px-5 py-2.5 bg-[#0088cc] hover:bg-[#0077b3] rounded-md text-white text-sm font-medium transition-colors"
               >
                 Download Investor Deck

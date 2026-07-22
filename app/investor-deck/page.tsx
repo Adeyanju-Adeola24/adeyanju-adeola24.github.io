@@ -43,7 +43,7 @@ export default function InvestorDeckPage() {
             <p className="text-gray-400 text-sm mb-6 max-w-lg mx-auto">Download the complete investor deck with detailed financial projections, market analysis, competitive landscape, and growth strategy.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href="#"
+                href="/investor-deck.html"
                 className="px-6 py-3 bg-[#0088cc] hover:bg-[#0077b3] rounded-md text-white font-medium transition-colors"
               >
                 Download PDF
