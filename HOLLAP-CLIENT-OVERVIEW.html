@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hollap — Client Overview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #12121a;
+    --card: #ffffff08;
+    --border: #ffffff12;
+    --text: #f5f5f5;
+    --muted: #9ca3af;
+    --accent1: #0088cc;
+    --accent2: #833AB4;
+    --accent3: #FD1D1D;
+    --accent4: #F77737;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 40px;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  /* Cover */
+  .cover {
+    text-align: center;
+    padding: 80px 40px 60px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 60px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #12121a 50%, #0a0a0a 100%);
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(131, 58, 180, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(0, 136, 204, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .cover .logo {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  
+  .cover .logo span {
+    background: linear-gradient(135deg, var(--accent2), var(--accent3), var(--accent4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .cover h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  
+  .cover p {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .cover .badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(0, 136, 204, 0.15);
+    color: var(--accent1);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  
+  .meta {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 32px;
+    position: relative;
+  }
+  
+  .meta-item {
+    text-align: center;
+  }
+  
+  .meta-item .num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent1);
+  }
+  
+  .meta-item .label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+  
+  /* Section */
+  .section {
+    margin-bottom: 50px;
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .section-header .icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  
+  .section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  
+  .section-header .sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-left: auto;
+  }
+  
+  .icon-blue { background: rgba(0, 136, 204, 0.15); }
+  .icon-purple { background: rgba(131, 58, 180, 0.15); }
+  .icon-red { background: rgba(253, 29, 29, 0.15); }
+  .icon-orange { background: rgba(247, 119, 55, 0.15); }
+  
+  /* Grid */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
+  
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    transition: border-color 0.2s;
+  }
+  
+  .card:hover { border-color: rgba(255,255,255,0.2); }
+  
+  .card .accent {
+    width: 32px;
+    height: 4px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  
+  .card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  .card .desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  
+  .card .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+  .tag-blue { background: rgba(0,136,204,0.12); color: var(--accent1); }
+  .tag-purple { background: rgba(131,58,180,0.12); color: var(--accent2); }
+  .tag-red { background: rgba(253,29,29,0.12); color: var(--accent3); }
+  .tag-orange { background: rgba(247,119,55,0.12); color: var(--accent4); }
+  .tag-green { background: rgba(34,197,94,0.12); color: #22c55e; }
+  
+  /* Table */
+  .table-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th {
+    text-align: left;
+    padding: 12px 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    font-weight: 600;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  td {
+    padding: 12px 20px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  
+  tr:last-child td { border-bottom: none; }
+  
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  
+  .badge-blue { background: rgba(0,136,204,0.12); color: var(--accent1); }
+  .badge-purple { background: rgba(131,58,180,0.12); color: var(--accent2); }
+  .badge-green { background: rgba(34,197,94,0.12); color: #22c55e; }
+  .badge-orange { background: rgba(247,119,55,0.12); color: var(--accent4); }
+  
+  /* Tech Stack */
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  
+  .tech-item {
+    padding: 8px 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  /* Route Tree */
+  .route-group { margin-bottom: 20px; }
+  
+  .route-group .group-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }
+  
+  .route-tree {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 13px;
+    line-height: 2;
+  }
+  
+  .route-tree .folder { color: var(--accent4); }
+  .route-tree .page { color: var(--text); }
+  .route-tree .api { color: #22c55e; }
+  .route-tree .sep { color: var(--muted); }
+  .route-tree .indent { padding-left: 24px; }
+  .route-tree .indent2 { padding-left: 48px; }
+  
+  /* Stats */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .stat-card .value {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent1), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .stat-card .lbl {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  
+  /* Footer */
+  .page-footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 40px 0;
+  }
+
+  /* Features */
+  .feature-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .feature-list li {
+    padding: 10px 14px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .feature-list li::before {
+    content: '✓';
+    color: #22c55e;
+    font-weight: 700;
+  }
+
+  .admin-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .admin-links a {
+    padding: 6px 14px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  @media print {
+    body { padding: 0; background: white; color: #111; }
+    .cover { background: #f8f8f8; border-color: #ddd; }
+    .card { background: #f5f5f5; border-color: #ddd; }
+    .table-wrap { background: #f5f5f5; border-color: #ddd; }
+    .route-tree { background: #f5f5f5; }
+    .tech-item { background: #f5f5f5; }
+    .stat-card { background: #f5f5f5; }
+    .feature-list li { background: #f5f5f5; }
+    :root { --bg: #fff; --bg2: #f8f8f8; --card: #f5f5f5; --border: #ddd; --text: #111; --muted: #666; }
+    .cover::before { display: none; }
+    .cover .badge { border: 1px solid var(--accent1); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- COVER -->
+<div class="cover">
+  <div class="badge">Web Application · June 2026</div>
+  <div class="logo">hollap<span>.</span></div>
+  <h1>Trusted Commerce Infrastructure<br>for Africa's Youth Economy</h1>
+  <p>A comprehensive platform connecting university students and young entrepreneurs for trusted campus commerce, communication, and productivity.</p>
+  <div class="meta">
+    <div class="meta-item">
+      <div class="num">10,000+</div>
+      <div class="label">Users</div>
+    </div>
+    <div class="meta-item">
+      <div class="num">2,000+</div>
+      <div class="label">Vendors</div>
+    </div>
+    <div class="meta-item">
+      <div class="num">150+</div>
+      <div class="label">Universities</div>
+    </div>
+    <div class="meta-item">
+      <div class="num">22</div>
+      <div class="label">Pages Built</div>
+    </div>
+  </div>
+</div>
+
+<!-- TECH STACK -->
+<div class="section">
+  <div class="section-header">
+    <div class="icon icon-blue">⚙️</div>
+    <h2>Technology Stack</h2>
+    <span class="sub">Production-ready foundations</span>
+  </div>
+  <div class="tech-list">
+    <span class="tech-item">Next.js 16.2</span>
+    <span class="tech-item">TypeScript</span>
+    <span class="tech-item">Tailwind CSS v4</span>
+    <span class="tech-item">Framer Motion 12</span>
+    <span class="tech-item">Geist Font</span>
+    <span class="tech-item">App Router</span>
+    <span class="tech-item">Turbopack</span>
+    <span class="tech-item">REST API Routes</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="section">
+  <div class="section-header">
+    <div class="icon icon-orange">📊</div>
+    <h2>Platform at a Glance</h2>
+    <span class="sub">Real traction metrics</span>
+  </div>
+  <div class="stat-row">
+    <div class="stat-card"><div class="value">22</div><div class="lbl">Total Pages</div></div>
+    <div class="stat-card"><div class="value">6</div><div class="lbl">API Endpoints</div></div>
+    <div class="stat-card"><div class="value">8</div><div class="lbl">Admin Modules</div></div>
+    <div class="stat-card"><div class="value">9</div><div class="lbl">Prototype Pages</div></div>
+    <div class="stat-card"><div class="value">7</div><div class="lbl">Public Pages</div></div>
+  </div>
+</div>
+
+<!-- PUBLIC PAGES -->
+<div class="section">
+  <div class="section-header">
+    <div class="icon icon-blue">🌐</div>
+    <h2>Public Website</h2>
+    <span class="sub">Marketing &amp; content pages</span>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <tr>
+        <th style="width:160px">Page</th>
+        <th>Route</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td><strong>Homepage</strong></td>
+        <td><code style="color:var(--accent1)">/</code></td>
+        <td>Hero, stats, platform overview, roadmap, investors, blog, FAQ, CTA</td>
+      </tr>
+      <tr>
+        <td><strong>Proof of Life</strong></td>
+        <td><code style="color:var(--accent1)">/dashboard</code></td>
+        <td>Monthly growth data, key milestones, traction for investors</td>
+      </tr>
+      <tr>
+        <td><strong>Blog</strong></td>
+        <td><code style="color:var(--accent1)">/blog</code></td>
+        <td>Company updates, product announcements</td>
+      </tr>
+      <tr>
+        <td><strong>Waitlist</strong></td>
+        <td><code style="color:var(--accent1)">/waitlist</code></td>
+        <td>Email signup — wired to backend API</td>
+      </tr>
+      <tr>
+        <td><strong>Contact</strong></td>
+        <td><code style="color:var(--accent1)">/contact</code></td>
+        <td>Contact form — wired to backend API</td>
+      </tr>
+      <tr>
+        <td><strong>Careers</strong></td>
+        <td><code style="color:var(--accent1)">/careers</code></td>
+        <td>4 open positions listed</td>
+      </tr>
+      <tr>
+        <td><strong>Ambassadors</strong></td>
+        <td><code style="color:var(--accent1)">/ambassadors</code></td>
+        <td>Campus ambassador program details</td>
+      </tr>
+      <tr>
+        <td><strong>Investor Deck</strong></td>
+        <td><code style="color:var(--accent1)">/investor-deck</code></td>
+        <td>Detailed investor presentation</td>
+      </tr>
+      <tr>
+        <td><strong>Legal Pages</strong></td>
+        <td><code style="color:var(--accent1)">/privacy, /terms, /security</code></td>
+        <td>Privacy policy, terms of service, security &amp; trust</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- PROTOTYPE -->
+<div class="section">
+  <div class="section-header">
+    <div class="icon icon-purple">📱</div>
+    <h2>Prototype — Mobile App</h2>
+    <span class="sub">Fully interactive mobile-first experience</span>
+  </div>
+  <div class="grid-3">
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#0088cc,#006699)"></div>
+      <h3>Board</h3>
+      <div class="desc">Daily command center with activity feed, quick stats (orders, messages, revenue), and quick actions</div>
+      <span class="tag tag-blue">/prototype/board</span>
+    </div>
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#833AB4,#FD1D1D)"></div>
+      <h3>Markets</h3>
+      <div class="desc">Product marketplace with category filtering, product grid, and individual product detail pages</div>
+      <span class="tag tag-purple">/prototype/markets</span>
+    </div>
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#F77737,#FDC830)"></div>
+      <h3>Bulletin</h3>
+      <div class="desc">Campus announcements, safety alerts, events, and community discussions with like/comment/share</div>
+      <span class="tag tag-orange">/prototype/bulletin</span>
+    </div>
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#FD1D1D,#F77737)"></div>
+      <h3>Trends</h3>
+      <div class="desc">Real-time trending products, top vendors, and rising categories with sales data</div>
+      <span class="tag tag-red">/prototype/trends</span>
+    </div>
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#833AB4,#0088cc)"></div>
+      <h3>MI Assistant</h3>
+      <div class="desc">AI operating assistant with smart chat summaries, auto-responses, and purchase recommendations</div>
+      <span class="tag tag-purple">/prototype/mi</span>
+    </div>
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#0088cc,#00BFFF)"></div>
+      <h3>Chat</h3>
+      <div class="desc">Real-time messaging with message threads, online status, and send capability</div>
+      <span class="tag tag-blue">/prototype/chat</span>
+    </div>
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#833AB4,#FD1D1D)"></div>
+      <h3>Moments</h3>
+      <div class="desc">Campus social feed — share moments, like, comment, and engage with the community</div>
+      <span class="tag tag-purple">/prototype/moments</span>
+    </div>
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#F77737,#FDC830)"></div>
+      <h3>List Product</h3>
+      <div class="desc">Product listing form with title, price, category, condition, and description — wired to API</div>
+      <span class="tag tag-orange">/prototype/products/new</span>
+    </div>
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#833AB4,#0088cc)"></div>
+      <h3>Onboarding</h3>
+      <div class="desc">Multi-step onboarding flows for both students and vendors — wired to backend API</div>
+      <span class="tag tag-purple">/prototype/onboarding/*</span>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div class="section">
+  <div class="section-header">
+    <div class="icon icon-red">🔐</div>
+    <h2>Admin Console</h2>
+    <span class="sub">Full platform management suite</span>
+  </div>
+  
+  <div class="stat-row">
+    <div class="stat-card"><div class="value">Dashboard</div><div class="lbl">KPI overview + recent transactions + platform health</div></div>
+    <div class="stat-card"><div class="value">Vendors</div><div class="lbl">Application review with approve/reject workflow</div></div>
+    <div class="stat-card"><div class="value">Users</div><div class="lbl">Search, filter, suspend/reactivate users</div></div>
+    <div class="stat-card"><div class="value">Transactions</div><div class="lbl">Full ledger with search and status filters</div></div>
+    <div class="stat-card"><div class="value">Moderation</div><div class="lbl">Content queue with auto-flagging and resolve/dismiss</div></div>
+    <div class="stat-card"><div class="value">Analytics</div><div class="lbl">DAU charts, revenue trends, university breakdown</div></div>
+  </div>
+  
+  <div class="admin-links">
+    <a href="#">📊 Dashboard</a>
+    <a href="#">🏪 Vendor Verification</a>
+    <a href="#">👥 User Management</a>
+    <a href="#">💳 Transactions</a>
+    <a href="#">⚖️ Moderation</a>
+    <a href="#">📈 Analytics</a>
+    <a href="#">🔑 Login (demo)</a>
+  </div>
+</div>
+
+<!-- API -->
+<div class="section">
+  <div class="section-header">
+    <div class="icon icon-orange">🔌</div>
+    <h2>API Endpoints</h2>
+    <span class="sub">Ready for frontend-backend integration</span>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <tr>
+        <th style="width:60px">Method</th>
+        <th>Endpoint</th>
+        <th>Purpose</th>
+      </tr>
+      <tr><td><span class="badge badge-green">POST</span></td><td><code>/api/waitlist</code></td><td>Email + name signup</td></tr>
+      <tr><td><span class="badge badge-green">POST</span></td><td><code>/api/contact</code></td><td>Contact form submissions</td></tr>
+      <tr><td><span class="badge badge-green">POST</span></td><td><code>/api/products</code></td><td>New product listings</td></tr>
+      <tr><td><span class="badge badge-green">POST</span></td><td><code>/api/onboarding/user</code></td><td>Student onboarding data</td></tr>
+      <tr><td><span class="badge badge-green">POST</span></td><td><code>/api/onboarding/vendor</code></td><td>Vendor shop registration</td></tr>
+      <tr><td><span class="badge badge-green">POST</span></td><td><code>/api/subscribe</code></td><td>Newsletter subscriptions</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- UX FEATURES -->
+<div class="section">
+  <div class="section-header">
+    <div class="icon icon-blue">🎨</div>
+    <h2>UI/UX Features</h2>
+    <span class="sub">Design system &amp; interaction details</span>
+  </div>
+  <ul class="feature-list">
+    <li>Dark theme with gradient accent palette</li>
+    <li>Fully responsive — mobile-first</li>
+    <li>Scroll-triggered animations (Framer Motion)</li>
+    <li>Animated particle background</li>
+    <li>Animated counter stats</li>
+    <li>Bottom tab navigation (mobile app)</li>
+    <li>Admin sidebar navigation</li>
+    <li>Toast notifications for actions</li>
+    <li>Status badges &amp; filter tabs</li>
+    <li>Smooth page transitions</li>
+    <li>Consistent gradient system (6 color schemes)</li>
+    <li>Custom Geist font integration</li>
+  </ul>
+</div>
+
+<!-- ROUTE MAP -->
+<div class="section">
+  <div class="section-header">
+    <div class="icon icon-purple">🗺️</div>
+    <h2>Complete Route Map</h2>
+    <span class="sub">All 30+ routes organized</span>
+  </div>
+  
+  <div class="route-group">
+    <div class="group-title">📄 Public Pages</div>
+    <div class="route-tree">
+      <span class="sep">├──</span> <span class="page">/</span> <span class="sep">(Homepage)</span><br>
+      <span class="sep">├──</span> <span class="page">/dashboard</span> <span class="sep">(Proof of Life)</span><br>
+      <span class="sep">├──</span> <span class="page">/blog</span> <span class="sep">(Blog listing)</span><br>
+      <span class="sep">├──</span> <span class="page">/blog/[slug]</span> <span class="sep">(Article)</span><br>
+      <span class="sep">├──</span> <span class="page">/waitlist</span> <span class="sep">(Signup)</span><br>
+      <span class="sep">├──</span> <span class="page">/contact</span> <span class="sep">(Contact form)</span><br>
+      <span class="sep">├──</span> <span class="page">/careers</span> <span class="sep">(Job listings)</span><br>
+      <span class="sep">├──</span> <span class="page">/ambassadors</span> <span class="sep">(Ambassador program)</span><br>
+      <span class="sep">├──</span> <span class="page">/investor-deck</span> <span class="sep">(Investor materials)</span><br>
+      <span class="sep">├──</span> <span class="page">/privacy</span> <span class="sep">(Privacy policy)</span><br>
+      <span class="sep">├──</span> <span class="page">/terms</span> <span class="sep">(Terms of service)</span><br>
+      <span class="sep">└──</span> <span class="page">/security</span> <span class="sep">(Security &amp; trust)</span>
+    </div>
+  </div>
+  
+  <div class="route-group">
+    <div class="group-title">📱 Prototype (Mobile App)</div>
+    <div class="route-tree">
+      <span class="sep">├──</span> <span class="folder">/prototype/</span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">board</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">markets</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">markets/[id]</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">bulletin</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">trends</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">mi</span> <span class="sep">(AI Assistant)</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">chat</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">chat/[id]</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">moments</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">moments/[id]</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">products/new</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">onboarding/user</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">onboarding/vendor</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">vendors/[id]</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">reviews</span></span>
+    </div>
+  </div>
+  
+  <div class="route-group">
+    <div class="group-title">🔐 Admin Console</div>
+    <div class="route-tree">
+      <span class="sep">├──</span> <span class="folder">/prototype/admin/</span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">dashboard</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">vendors</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">users</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">transactions</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">moderation</span></span><br>
+      <span class="indent"><span class="sep">├──</span> <span class="page">analytics</span></span><br>
+      <span class="indent"><span class="sep">└──</span> <span class="page">login</span></span>
+    </div>
+  </div>
+  
+  <div class="route-group">
+    <div class="group-title">🔌 API</div>
+    <div class="route-tree">
+      <span class="sep">├──</span> <span class="api">POST /api/waitlist</span><br>
+      <span class="sep">├──</span> <span class="api">POST /api/contact</span><br>
+      <span class="sep">├──</span> <span class="api">POST /api/products</span><br>
+      <span class="sep">├──</span> <span class="api">POST /api/onboarding/user</span><br>
+      <span class="sep">├──</span> <span class="api">POST /api/onboarding/vendor</span><br>
+      <span class="sep">└──</span> <span class="api">POST /api/subscribe</span>
+    </div>
+  </div>
+</div>
+
+<!-- ROADMAP -->
+<div class="section">
+  <div class="section-header">
+    <div class="icon icon-red">🚀</div>
+    <h2>Development Roadmap</h2>
+    <span class="sub">What's built vs what's next</span>
+  </div>
+  <div class="grid-4">
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#0088cc,#006699)"></div>
+      <h3>Phase 1 ✅</h3>
+      <div class="desc" style="margin-top:8px">
+        • Vendor onboarding &amp; verification<br>
+        • Product listings &amp; search<br>
+        • Real-time chat &amp; reviews<br>
+        • Admin dashboard
+      </div>
+      <span class="tag tag-green">Complete</span>
+    </div>
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#833AB4,#FD1D1D)"></div>
+      <h3>Phase 2 🔄</h3>
+      <div class="desc" style="margin-top:8px">
+        • Escrow payment system<br>
+        • Hollap Wallet<br>
+        • Vendor analytics<br>
+        • Promoted listings
+      </div>
+      <span class="tag tag-blue">In Progress</span>
+    </div>
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#F77737,#FDC830)"></div>
+      <h3>Phase 3</h3>
+      <div class="desc" style="margin-top:8px">
+        • MI AI assistant suite<br>
+        • Smart auto-responses<br>
+        • AI recommendations<br>
+        • Workflow automation
+      </div>
+      <span class="tag tag-orange">Upcoming</span>
+    </div>
+    <div class="card">
+      <div class="accent" style="background:linear-gradient(135deg,#833AB4,#0088cc)"></div>
+      <h3>Future</h3>
+      <div class="desc" style="margin-top:8px">
+        • Campus communities<br>
+        • Brand storefronts<br>
+        • Physical retail pop-ups<br>
+        • International expansion
+      </div>
+      <span class="tag tag-purple">Later</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="page-footer">
+  <p style="font-weight:600;margin-bottom:4px">hollap<span style="color:var(--accent1)">.</span></p>
+  <p>Trusted Commerce for Africa's Youth Economy</p>
+  <p style="margin-top:8px;opacity:0.6">Client Overview · June 2026</p>
+</div>
+
+</div>
+</body>
+</html>
