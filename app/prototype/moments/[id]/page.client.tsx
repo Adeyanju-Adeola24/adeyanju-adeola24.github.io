@@ -45,7 +45,7 @@ export default function MomentDetailPage() {
           <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#833AB4] to-[#F77737] flex items-center justify-center text-sm font-bold">{moment.user[0]}</div>
           <div>
             <p className="text-sm font-medium">{moment.user}</p>
-            <p className="text-[10px] text-gray-500">{moment.handle} · {moment.time}</p>
+            <p className="text-[10px] text-gray-500">{moment.university} · {moment.time}</p>
           </div>
         </div>
 
