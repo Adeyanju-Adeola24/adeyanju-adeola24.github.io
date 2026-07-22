@@ -45,7 +45,7 @@ export default function ProductDetailPage() {
       </div>
 
       {/* Description */}
-      <p className="text-sm text-gray-400 leading-relaxed mb-6">{product.desc}</p>
+      <p className="text-sm text-gray-400 leading-relaxed mb-6">{product.description}</p>
 
       {/* Vendor */}
       {vendor && (
