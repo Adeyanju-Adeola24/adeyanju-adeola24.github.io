@@ -34,7 +34,7 @@ export default function ProductDetailPage() {
 
       {/* Image Placeholder */}
       <div className="w-full aspect-square bg-gradient-to-br from-[#833AB4]/20 to-[#0088cc]/20 rounded-2xl mb-4 flex items-center justify-center">
-        <span className="text-6xl">{product.emoji}</span>
+        <span className="text-6xl">{product.images[0]}</span>
       </div>
 
       {/* Title & Price */}
