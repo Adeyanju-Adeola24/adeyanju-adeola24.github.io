@@ -71,9 +71,9 @@ export default function MomentDetailPage() {
 
         {/* Comments */}
         <div className="px-4 pb-3 space-y-1">
-          {moment.comments?.map((c, i) => (
-            <p key={i} className="text-sm text-gray-400"><span className="font-medium text-gray-300">{c.user}</span> {c.text}</p>
-          ))}
+          {moment.comments > 0 && (
+            <p className="text-sm text-gray-400">View all {moment.comments} comments</p>
+          )}
           {comments.map((c, i) => (
             <p key={`new-${i}`} className="text-sm text-gray-400"><span className="font-medium text-[#0088cc]">{c.user}</span> {c.text}</p>
           ))}
