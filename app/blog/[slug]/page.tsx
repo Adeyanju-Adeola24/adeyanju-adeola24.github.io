@@ -78,9 +78,9 @@ export default async function BlogPostPage({
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">{post.title}</h1>
           <p className="text-sm text-gray-500 mb-10">By {post.author}</p>
           <div className="max-w-none text-gray-300 leading-relaxed space-y-4">
-            {post.content.map((block, i) => {
+            {post.content.map((block: any, i) => {
               if (block.tag === "h2") return <h2 key={i} className="text-2xl font-bold text-white mt-8 mb-2">{block.text}</h2>;
-              if (block.tag === "ul") return <ul key={i} className="list-disc list-inside space-y-1 text-gray-300">{block.items!.map((item, j) => <li key={j}>{item}</li>)}</ul>;
+              if (block.tag === "ul") return <ul key={i} className="list-disc list-inside space-y-1 text-gray-300">{block.items.map((item: string, j: number) => <li key={j}>{item}</li>)}</ul>;
               return <p key={i}>{block.text}</p>;
             })}
           </div>
