@@ -1,7 +1,7 @@
 import { products } from "@/lib/data";
 import dynamic from "next/dynamic";
 
-const ProductDetailClient = dynamic(() => import("./page.client"), { ssr: false });
+const ProductDetailClient = dynamic(() => import("./page.client"));
 
 export function generateStaticParams() {
   return products.map((p) => ({ id: p.id }));
