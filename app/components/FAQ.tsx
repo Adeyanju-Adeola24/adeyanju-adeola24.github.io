@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "How much does it cost to use Hollap?",
-    a: "Buying is free. Vendors pay a 2.5% transaction fee per sale. Premium vendor subscriptions with advanced analytics and promoted listings are available for a monthly fee.",
+    a: "Buying is free. Vendors pay a 5% transaction fee per sale. Premium vendor subscriptions with advanced analytics and promoted listings are available for a monthly fee.",
   },
 ];
 

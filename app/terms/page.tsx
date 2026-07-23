@@ -59,7 +59,7 @@ export default function TermsPage() {
               {
                 title: "5. Transactions & Fees",
                 content: [
-                  "Hollap charges a transaction fee of 2.5% on each completed sale.",
+                  "Hollap charges a transaction fee of 5% on each completed sale.",
                   "Additional fees may apply for escrow services, promoted listings, and premium features.",
                   "All fees are disclosed before transaction completion.",
                   "Prices listed by vendors are in the local currency and may include applicable taxes.",
