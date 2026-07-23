@@ -47,7 +47,7 @@ export default function VendorProfilePage() {
             className="flex items-center gap-4 bg-white/5 rounded-xl p-3 border border-white/10 hover:bg-white/[0.07] transition-colors"
           >
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#833AB4]/20 to-[#0088cc]/20 flex items-center justify-center shrink-0">
-              <span className="text-2xl">{p.emoji}</span>
+              <span className="text-2xl">{p.images[0]}</span>
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium truncate">{p.title}</p>
