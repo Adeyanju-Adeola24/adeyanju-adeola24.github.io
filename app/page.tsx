@@ -30,10 +30,10 @@ export default function Home() {
                 View Prototype
               </a>
               <a
-                href="#investors"
+                href="#markets"
                 className="px-6 py-3 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:opacity-90 rounded-md text-white transition-opacity font-medium"
               >
-                Invest in Hollap
+                Explore the Platform
               </a>
             </div>
           </ScrollAnimation>
@@ -144,146 +144,6 @@ export default function Home() {
       </section>
       </ScrollAnimation>
 
-      {/* Vision / Roadmap Section */}
-      <ScrollAnimation>
-      <section className="px-4 py-20 max-w-6xl mx-auto w-full">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">Roadmap</h2>
-        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-          A clear plan, not a wishlist.
-        </p>
-
-        <div className="grid md:grid-cols-4 gap-4">
-          {[
-            {
-              phase: "Phase 1",
-              label: "Current",
-              items: [
-                "Vendor onboarding & verification",
-                "Product listings & search",
-                "Real‑time chat & reviews",
-                "Admin dashboard",
-              ],
-              gradient: "from-[#0088cc] to-[#006699]",
-            },
-            {
-              phase: "Phase 2",
-              label: "Coming Soon",
-              items: [
-                "Escrow payment system",
-                "Hollap Wallet",
-                "Vendor analytics",
-                "Promoted listings",
-              ],
-              gradient: "from-[#833AB4] to-[#FD1D1D]",
-            },
-            {
-              phase: "Phase 3",
-              label: "On Horizon",
-              items: [
-                "MI AI assistant suite",
-                "Smart auto‑responses",
-                "AI recommendations",
-                "Workflow automation",
-              ],
-              gradient: "from-[#F77737] to-[#FDC830]",
-            },
-            {
-              phase: "Future",
-              label: "Beyond",
-              items: [
-                "Campus communities",
-                "Brand storefronts",
-                "Physical retail pop‑ups",
-                "International expansion",
-              ],
-              gradient: "from-[#833AB4] to-[#0088cc]",
-            },
-          ].map((phase) => (
-            <div
-              key={phase.phase}
-              className="bg-white/5 rounded-xl p-6 border border-white/10"
-            >
-              <div className={`h-1.5 w-12 rounded-full bg-gradient-to-r ${phase.gradient} mb-3`} />
-              <span className="text-xs uppercase tracking-widest text-gray-500">{phase.label}</span>
-              <h3 className="text-lg font-semibold mt-1 mb-4">{phase.phase}</h3>
-              <ul className="space-y-2">
-                {phase.items.map((item) => (
-                  <li key={item} className="text-sm text-gray-400 flex items-start gap-2">
-                    <span className="text-gray-600 mt-1">▸</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-      </ScrollAnimation>
-
-      {/* Market / Traction Section */}
-      <ScrollAnimation>
-      <section className="px-4 py-20 bg-[#0a0a0a]/50 w-full">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">Market & Traction</h2>
-          <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-            A massive opportunity at the intersection of Africa&apos;s youth boom and fragmented commerce.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10 text-center">
-              <p className="text-4xl font-bold text-[#0088cc]">700M+</p>
-              <p className="text-gray-400 mt-2">University students across Africa</p>
-            </div>
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10 text-center">
-              <p className="text-4xl font-bold text-[#833AB4]">$500B+</p>
-              <p className="text-gray-400 mt-2">Campus commerce TAM by 2028</p>
-            </div>
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10 text-center">
-              <p className="text-4xl font-bold bg-gradient-to-r from-[#FD1D1D] to-[#F77737] bg-clip-text text-transparent">340%</p>
-              <p className="text-gray-400 mt-2">Projected mobile commerce growth</p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Why Now</h3>
-              <ul className="space-y-3">
-                {[
-                  "Smartphone adoption across Africa is accelerating faster than any other region",
-                  "Mobile money (M‑Pesa, etc.) has normalized digital payments for the young demographic",
-                  "60% of Africa&apos;s population is under 25 — the largest youth demographic in the world",
-                  "Campus commerce is still offline or fragmented across WhatsApp and Instagram",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-gray-400">
-                    <span className="text-[#0088cc] mt-1 shrink-0">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-semibold mb-4">Traction to Date</h3>
-              <ul className="space-y-3">
-                {[
-                  "10,000+ registered users across pilot universities",
-                  "2,000+ verified vendors on the platform",
-                  "5M+ transactions processed in pilot phase",
-                  "150+ university campuses reached",
-                  "Month‑over‑month user growth: 42%",
-                  "Vendor retention rate: 89%",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-gray-400">
-                    <span className="text-[#F77737] mt-1 shrink-0">◆</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      </ScrollAnimation>
-
       {/* Team Section */}
       <ScrollAnimation>
       <section className="px-4 py-20 max-w-6xl mx-auto w-full">
@@ -311,165 +171,6 @@ export default function Home() {
       </section>
       </ScrollAnimation>
 
-      {/* Investors Section */}
-      <ScrollAnimation>
-      <section id="investors" className="px-4 py-20 bg-[#0a0a0a]/50 w-full">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">Investors</h2>
-          <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-            Join us in building the commerce infrastructure for Africa&apos;s next generation.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-semibold mb-4">The Ask</h3>
-              <p className="text-3xl font-bold text-[#0088cc] mb-2">$50k</p>
-              <p className="text-gray-400 text-sm">Pre‑Seed Round</p>
-              <p className="text-gray-500 text-xs mt-1">Minimum check: $25k</p>
-            </div>
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-semibold mb-4">Revenue Model</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                {[
-                  "Transaction fees (5% per sale)",
-                  "Escrow service fees",
-                  "Vendor subscriptions (premium profiles + analytics)",
-                  "Promoted listings & ads",
-                  "Premium AI tools (MI suite)",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="text-[#F77737]">→</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="bg-white/5 rounded-xl p-6 border border-white/10 mb-8">
-            <h3 className="text-xl font-semibold mb-4">Use of Funds</h3>
-            <div className="space-y-3">
-              {[
-                { label: "Product Development", pct: 35, color: "from-[#0088cc] to-[#006699]" },
-                { label: "Marketing & User Acquisition", pct: 25, color: "from-[#833AB4] to-[#FD1D1D]" },
-                { label: "Operations & Team", pct: 20, color: "from-[#F77737] to-[#FDC830]" },
-                { label: "Legal & Compliance", pct: 10, color: "from-[#833AB4] to-[#0088cc]" },
-                { label: "Reserve", pct: 10, color: "from-[#FD1D1D] to-[#F77737]" },
-              ].map((item) => (
-                <div key={item.label}>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">{item.label}</span>
-                    <span className="text-gray-400">{item.pct}%</span>
-                  </div>
-                  <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                    <div
-                      className={`h-full rounded-full bg-gradient-to-r ${item.color}`}
-                      style={{ width: `${item.pct}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-semibold mb-4">Competition</h3>
-              <p className="text-sm text-gray-400 mb-3">
-                Fragmented: WhatsApp groups, Instagram shops, Telegram channels, Jiji, and campus Facebook groups all overlap.
-              </p>
-              <p className="text-sm text-gray-300 font-medium">Hollap&apos;s Moat:</p>
-              <ul className="space-y-1 text-sm text-gray-400 mt-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0088cc]">•</span> Trust infrastructure (verified vendors + escrow)
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0088cc]">•</span> MI AI assistant — no competitor has this
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0088cc]">•</span> Campus‑first ecosystem (Board, Bulletin, Markets)
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#0088cc]">•</span> All‑in‑one vs. point solutions
-                </li>
-              </ul>
-            </div>
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
-              <p className="text-sm text-gray-400 mb-4">
-                Interested in investing or receiving the pitch deck?
-              </p>
-              <a
-                href="/investor-deck.html"
-                className="inline-block px-5 py-2.5 bg-[#0088cc] hover:bg-[#0077b3] rounded-md text-white text-sm font-medium transition-colors"
-              >
-                Download Investor Deck
-              </a>
-              <p className="text-xs text-gray-500 mt-4">
-                Or email us at <a href="mailto:invest@hollap.com" className="text-[#0088cc] hover:underline">invest@hollap.com</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      </ScrollAnimation>
-
-      {/* Blog / Updates Section */}
-      <ScrollAnimation>
-      <section className="px-4 py-20 max-w-6xl mx-auto w-full">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">Updates</h2>
-        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-          Latest milestones and announcements from the Hollap team.
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            {
-              slug: "launch-at-university-of-lagos",
-              date: "May 2026",
-              title: "Launch at University of Lagos",
-              desc: "Successfully onboarded 2,000+ students in our first pilot week. 89% vendor retention rate.",
-              gradient: "from-[#0088cc] to-[#006699]",
-            },
-            {
-              slug: "mi-alpha-released",
-              date: "April 2026",
-              title: "MI Alpha Released",
-              desc: "Internal release of our AI assistant. Auto‑responses, chat summaries, and purchase recommendations now live.",
-              gradient: "from-[#833AB4] to-[#FD1D1D]",
-            },
-            {
-              slug: "escrow-integration-begins",
-              date: "March 2026",
-              title: "Escrow Integration Begins",
-              desc: "Development started on our escrow payment system to bring trust and safety to every transaction.",
-              gradient: "from-[#F77737] to-[#FDC830]",
-            },
-          ].map((post) => (
-            <Link
-              key={post.title}
-              href={`/blog/${post.slug}`}
-              className="block bg-white/5 rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
-            >
-              <div className={`h-1.5 w-12 rounded-full bg-gradient-to-r ${post.gradient} mb-3`} />
-              <p className="text-xs text-gray-500 uppercase tracking-wider mb-2">{post.date}</p>
-              <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">{post.desc}</p>
-            </Link>
-          ))}
-        </div>
-
-        <div className="text-center mt-10">
-          <Link
-            href="/blog"
-            className="inline-block px-5 py-2.5 border border-white/10 hover:border-white/20 rounded-md text-sm text-gray-300 hover:text-white transition-colors"
-          >
-            View All Posts →
-          </Link>
-        </div>
-      </section>
-      </ScrollAnimation>
-
       <Testimonials />
 
       <FAQ />
@@ -486,7 +187,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/waitlist"
+              href="/contact"
               className="inline-flex items-center gap-3 px-6 py-3 bg-white text-black rounded-md hover:bg-gray-200 transition-colors font-medium"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -495,7 +196,7 @@ export default function Home() {
               Download on the App Store
             </a>
             <a
-              href="/waitlist"
+              href="/contact"
               className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 border border-white/10 hover:bg-white/20 rounded-md text-white transition-colors font-medium"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -505,7 +206,7 @@ export default function Home() {
             </a>
           </div>
           <p className="text-xs text-gray-500 mt-6">
-            Join the waitlist to get early access when we launch.
+            Contact us to get early access when we launch.
           </p>
         </div>
       </section>

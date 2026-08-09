@@ -72,9 +72,6 @@ export default function Footer() {
           <h4 className="text-white font-semibold mb-4">Company</h4>
           <ul className="space-y-2 text-sm text-gray-400">
             <li><Link href="/#about" className="hover:text-white transition-colors">About</Link></li>
-            <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-            <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
-            <li><Link href="/ambassadors" className="hover:text-white transition-colors">Ambassadors</Link></li>
             <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
           </ul>
         </div>
@@ -83,7 +80,6 @@ export default function Footer() {
           <ul className="space-y-2 text-sm text-gray-400">
             <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
             <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
-            <li><Link href="/security" className="hover:text-white transition-colors">Security & Trust</Link></li>
           </ul>
         </div>
         <div>

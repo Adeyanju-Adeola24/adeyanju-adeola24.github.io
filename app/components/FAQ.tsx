@@ -5,27 +5,23 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What is Hollap?",
-    a: "Hollap is an all-in-one platform for campus commerce, communication, and productivity. Students can buy and sell with trust, chat with vendors, access campus announcements, and use AI-powered tools — all in one place.",
-  },
-  {
-    q: "How does escrow protection work?",
-    a: "When you make a purchase, funds are held securely in escrow until you confirm delivery. This protects both buyers and sellers — no more scams or disputes over payments.",
+    a: "Hollap is an all-in-one platform for campus commerce and communication. Students can buy and sell with trust, chat with vendors, and access campus announcements — all in one place.",
   },
   {
     q: "How do I become a verified vendor?",
     a: "Sign up as a vendor, complete your profile, and submit your verification documents. Our team reviews and approves within 48 hours. Once verified, you can list products and start selling immediately.",
   },
   {
-    q: "Is Hollap available at my university?",
-    a: "We're currently live at 150+ universities across Africa. If your campus isn't on the list yet, join the waitlist and we'll notify you when we launch there.",
+    q: "How do I buy on Hollap?",
+    a: "Browse the markets, chat with vendors directly, and check their reviews and ratings before you buy. Every vendor is verified so you can shop with confidence.",
   },
   {
-    q: "What does MI (the AI assistant) do?",
-    a: "MI is your AI operating assistant. It provides smart chat summaries, auto-responses for common inquiries, personalized purchase recommendations, and workflow automation for vendors.",
+    q: "Is Hollap available at my university?",
+    a: "We're rolling out across campuses in Africa. If your campus isn't live yet, contact us and we'll notify you when we launch there.",
   },
   {
     q: "How much does it cost to use Hollap?",
-    a: "Buying is free. Vendors pay a 5% transaction fee per sale. Premium vendor subscriptions with advanced analytics and promoted listings are available for a monthly fee.",
+    a: "Buying is free. Vendors pay a 5% transaction fee per sale.",
   },
 ];
 
