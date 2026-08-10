@@ -20,12 +20,19 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
       <div className="flex">
         <aside className="hidden lg:flex flex-col w-56 min-h-screen border-r border-white/5 bg-[#0a0a0a] fixed left-0 top-0">
           <div className="p-5 border-b border-white/5">
-            <Link href="/prototype/admin/dashboard" className="text-lg font-bold tracking-tight">
+            <Link href="/" className="text-lg font-bold tracking-tight">
               <span className="text-white">hollap</span>
               <span className="text-[#0088cc] ml-0.5">admin</span>
             </Link>
           </div>
           <nav className="flex-1 p-3 space-y-1">
+            <Link
+              href="/"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors text-gray-400 hover:text-white hover:bg-white/5 mb-2 border-b border-white/5 pb-3"
+            >
+              <span>⌂</span>
+              Back to Home
+            </Link>
             {adminLinks.map((link) => {
               const active = path === link.href
               return (
@@ -58,6 +65,12 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
         <div className="flex-1 lg:ml-56">
           {/* Mobile top nav */}
           <div className="lg:hidden flex items-center gap-2 px-4 py-3 border-b border-white/5 overflow-x-auto">
+            <Link
+              href="/"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-colors bg-[#0088cc] text-white"
+            >
+              ⌂ Home
+            </Link>
             {adminLinks.map((link) => {
               const active = path === link.href
               return (

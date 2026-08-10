@@ -20,11 +20,14 @@ export default function PrototypeLayout({ children }: { children: ReactNode }) {
       {/* Top bar */}
       {isAppPage && (
         <header className="fixed top-0 left-0 right-0 z-40 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5 px-4 h-14 flex items-center justify-between">
-          <Link href="/prototype/board" className="text-lg font-bold tracking-tight">
+          <Link href="/" className="text-lg font-bold tracking-tight">
             <span className="text-white">hollap</span>
             <span className="bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] bg-clip-text text-transparent ml-0.5">.</span>
           </Link>
           <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors px-2 py-1 rounded-md hover:bg-white/5">
+              <span>⌂</span> Home
+            </Link>
             <Link href="/prototype/chat" className={`text-sm ${path.includes("chat") ? "text-[#0088cc]" : "text-gray-400"} hover:text-white transition-colors`}>
               💬
             </Link>
