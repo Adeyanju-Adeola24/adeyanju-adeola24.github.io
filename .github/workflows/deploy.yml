@@ -24,6 +24,13 @@ jobs:
       - uses: actions/configure-pages@v4
       - run: npm ci
       - run: npm run build
+      - name: Include daily project sites
+        run: |
+          for dir in day-*; do
+            if [ -d "$dir" ]; then
+              cp -R "$dir" "out/$dir"
+            fi
+          done
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
